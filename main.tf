@@ -1,6 +1,6 @@
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-2"  # Set AWS region to US East 2 (Ohio)
+  region = "us-east-1"  # Set AWS region to US East 1 (North Virginia)
 }
 
 # Local variables block for configuration values
