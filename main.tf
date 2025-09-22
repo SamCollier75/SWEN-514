@@ -14,7 +14,7 @@ resource "aws_instance" "my_server" {
   instance_type = var.instance_type            # Use the instance type from variables
   key_name      = "This_is_a_key"          # Specify the SSH key pair name
   
-  vpc_security_group_ids = [aws_security_group.allow_http_ssh.id]
+  vpc_security_group_ids = [aws_security_group.allow_http_ssh.name]
 
   user_data = file("wp_install.sh")
 
@@ -25,7 +25,7 @@ resource "aws_instance" "my_server" {
 }
 
 resource "aws_security_group" "allow_http_ssh" {
-  name        = "allow_http_ssh"
+  name        = "allow_http"
   description = "Allow HTTP and SSH inbound traffic"
 
   ingress {
