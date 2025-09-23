@@ -50,3 +50,13 @@ resource "aws_security_group" "allow_http_ssh" {
   }
   
 }
+
+terraform {
+  required_version = ">= 1.1.0"
+  backend "s3" {
+    bucket = "bucket-for-terra-rit" # S3 bucket for state storage
+    key = "github-actions/terraform.tfstate" # State file path in the bucket
+    region = "us-east-1" # AWS region
+    encrypt = true
+  }
+}
